@@ -11398,8 +11398,8 @@ a.blog-item-more:hover {
   margin-top: 40px;
 }
 .testimonials-slider-3 .owl-buttons {
-  padding-right: 30px;
-  text-align: right;
+  margin-right: 10px;
+  text-align: center;
 }
 .testimonials-slider-3 .owl-pagination {
   display: none;
@@ -11409,14 +11409,13 @@ a.blog-item-more:hover {
   position: relative;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
+
   display: inline-flex;
   justify-content: center;
   align-items: center;
   width: 48px;
   height: 48px;
-  margin-left: 10px;
+  /* margin-left: 10px; */
   padding: 0;
   font-size: 24px;
   text-align: center;
