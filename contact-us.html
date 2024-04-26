@@ -724,7 +724,10 @@ You can find the code of your language here - https://www.w3schools.com/tags/ref
         let requestBody = new FormData(form);
         fetch(scriptURL, { method: "POST", body: requestBody })
           .then((response) => {
-            alert("Success!", response);
+            alert(
+              "Thanks! You will receive your exclusive offer on email address provided.",
+              response
+            );
             form.reset();
             submitButton.disabled = false;
           })
