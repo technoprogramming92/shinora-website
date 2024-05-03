@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-
+<!-- Change the value of lang="en" attribute if your website's language is not English.
+You can find the code of your language here - https://www.w3schools.com/tags/ref_language_codes.asp -->
 <html lang="en">
   <head>
     <title>Shinora &mdash; Skin & Dental Clinic</title>
     <meta name="description" content="Shinora &mdash; Skin & Dental Clinic" />
     <meta charset="utf-8" />
-    <meta
-      name="author"
-      content="https://themeforest.net/user/bestlooker/portfolio"
-    />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Favicon -->
@@ -25,18 +23,34 @@
     <link rel="stylesheet" href="css/splitting.css" />
     <link rel="stylesheet" href="css/YTPlayer.css" />
     <link rel="stylesheet" href="css/demo-strong/demo-strong.css" />
+    <style>
+      @font-face {
+        font-family: BlackMango;
+        src: url(./webfonts/black-mango/BlackMango-Medium.ttf);
+      }
+      @font-face {
+        font-family: Plus Jakarta Sans;
+        src: url(./webfonts/plus-jakatra/PlusJakartaSans-Regular.ttf);
+      }
+      h1,
+      h3 {
+        font-family: Plus Jakarta Sans;
+        font-size: 45px;
+      }
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com/" />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
-      rel="stylesheet"
-    />
+      p {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+    </style>
+    <style>
+      .nav-scrolled a {
+        color: #055d5b !important; /* Change this color to whatever you want for the scrolling state */
+      }
+    </style>
   </head>
   <body class="appear-animate">
     <!-- Page Loader -->
-    <div class="page-loader color">
+    <div class="page-loader">
       <div class="loader">Loading...</div>
     </div>
     <!-- End Page Loader -->
@@ -74,14 +88,14 @@
           <div class="inner-nav desktop-nav">
             <ul class="clearlist local-scroll">
               <li>
-                <a href="index.html" style="color: #014e4e">Home</a>
+                <a href="index.html" style="color: #ddbc93">Home</a>
               </li>
               <li>
-                <a href="about.html" style="color: #014e4e">About</a>
+                <a href="about.html" style="color: #ddbc93">About</a>
               </li>
               <!-- Item With Sub -->
               <li>
-                <a href="#" class="mn-has-sub" style="color: #014e4e"
+                <a href="#" class="mn-has-sub" style="color: #ddbc93"
                   >Skin Care <i class="mi-chevron-down"></i
                 ></a>
 
@@ -360,31 +374,17 @@
               <!-- End Sub Megamenu -->
               <!-- </li> -->
               <!-- End Item With Sub -->
+              <!-- </li> -->
 
               <li>
-                <a href="strong-blog.html" style="color: #014e4e">Blog</a>
-              </li>
-              <li>
-                <a href="contact-us.html" class="active" style="color: #014e4e"
-                  >Exclusive Offer</a
+                <a href="strong-blog.html" class="active" style="color: #ddbc93"
+                  >Blog</a
                 >
               </li>
-            </ul>
-
-            <ul class="items-end clearlist local-scroll">
               <li>
-                <a href="contact-us.html" class="opacity-1 no-hover">
-                  <span
-                    class="link-hover-anim"
-                    data-link-animate="y"
-                    style="color: #014e4e"
-                    ><span
-                      class="icon-ellipse me-1"
-                      style="color: #014e4e"
-                    ></span>
-                    Say hello</span
-                  >
-                </a>
+                <a href="contact-us.html" style="color: #ddbc93"
+                  >Exclusive Offer</a
+                >
               </li>
             </ul>
           </div>
@@ -396,296 +396,285 @@
       <main id="main">
         <!-- Home Section -->
         <section
-          class="page-section bg-gradient-gray-light-1 bg-scroll overflow-hidden"
+          class="page-section bg-dark-alpha-30 light-content parallax-5"
+          style="background-image: url(images/demo-strong/section-bg-1.jpg)"
+          id="home"
         >
-          <!-- Background Shape -->
-          <div class="bg-shape-1 wow fadeIn">
-            <img src="images/demo-fancy/bg-shape-1.svg" alt="" />
-          </div>
-          <!-- End Background Shape -->
+          <div class="container position-relative pt-sm-30">
+            <!-- Home Section Content -->
+            <div class="home-content text-center">
+              <h1 class="section-title-medium mb-0">
+                <span class="wow charsAnimIn" data-splitting="chars">
+                  Unveiling the Secret to Glowing Skin During Menopause
+                </span>
+              </h1>
 
-          <div class="container position-relative pt-10 pt-sm-40 text-center">
-            <div class="row">
-              <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-                <h1 class="hs-title-10 mb-10">
-                  <span class="wow charsAnimIn" data-splitting="chars">
-                    Exclusive
-                    <span class="mark-decoration-3-wrap"
-                      >Offer<b
-                        class="mark-decoration-3 wow scalexIn"
-                        data-wow-delay="0.5s"
-                      ></b
-                    ></span>
-                  </span>
-                </h1>
-
-                <p class="section-descr mb-0 wow fadeIn" data-wow-delay="0.2s">
-                  Please fill following form to receive our exclusive
-                  inaugration offer.
-                </p>
+              <!-- Author, Categories, Comments -->
+              <div
+                class="blog-item-data mt-30 mt-sm-10 mb-0 wow fadeInUp"
+                data-wow-delay="0.2s"
+              >
+                <div class="d-inline-block me-3">
+                  <a href="#"
+                    ><i class="mi-clock size-16"></i
+                    ><span class="visually-hidden">Date:</span> May 04, 2024</a
+                  >
+                </div>
+                <div class="d-inline-block me-3">
+                  <a href="#"
+                    ><i class="mi-user size-16"></i
+                    ><span class="visually-hidden">Author:</span>Dr. Bhavarth
+                    Kalaria</a
+                  >
+                </div>
+                <div class="d-inline-block me-3">
+                  <i class="mi-folder size-16"></i>
+                  <span class="visually-hidden">Categories:</span>
+                  <a href="#">Skin Care</a>, <a href="#">Dermatology</a>
+                </div>
+                <div class="d-inline-block me-3">
+                  <a href="#"><i class="mi-message size-16"></i> 0 Comments</a>
+                </div>
               </div>
+              <!-- End Author, Categories, Comments -->
             </div>
+            <!-- End Home Section Content -->
           </div>
         </section>
         <!-- End Home Section -->
 
-        <!-- Contact Section -->
-        <section class="page-section" id="contact">
-          <div
-            class="container position-relative wow fadeInUp"
-            data-wow-delay="0"
-          >
+        <!-- Section -->
+        <section class="page-section">
+          <div class="container relative">
             <div class="row">
-              <!-- Left Column -->
-              <div
-                class="col-lg-4 mb-md-50 mb-sm-30 position-relative z-index-1"
-              >
-                <h3 class="section-title mb-50 mb-sm-30">
-                  We’re open to talk.
-                </h3>
-
-                <!-- Contact Information -->
-                <div class="row">
-                  <div class="col-md-11">
-                    <!-- Address -->
-                    <div class="contact-item mb-30 mb-sm-20">
-                      <div class="ci-icon">
-                        <i class="mi-location"></i>
-                      </div>
-                      <h4 class="ci-title visually-hidden">Our Address</h4>
-                      <div class="ci-text">
-                        402, Soham Pristine, Behind Times Square Grand, Sindhu
-                        Bhavan Marg, Ahmedabad, Gujarat 380054
-                      </div>
-                      <div>
-                        <a
-                          href="https://maps.app.goo.gl/9nf19TFn1EKV3JBN6"
-                          class="link-hover-anim"
-                          data-link-animate="y"
-                          rel="nofollow noopener"
-                          target="_blank"
-                          >See Map <i class="mi-arrow-right size-18"></i
-                        ></a>
-                      </div>
+              <!-- Content -->
+              <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+                <!-- Post -->
+                <div class="blog-item mb-80 mb-xs-40">
+                  <div class="blog-item-body">
+                    <div class="mb-40 mb-xs-30">
+                      <img
+                        src="images2/blog/blog-2.jpg"
+                        alt="Image Description"
+                      />
                     </div>
-                    <!-- End Address -->
+                    <h3>
+                      Discover How Shinora Skin and Dental Care Clinic Can
+                      Transform Your Skin
+                    </h3>
+                    <p>
+                      Are you experiencing the effects of menopause on your
+                      skin? From dryness and dullness to fine lines and
+                      wrinkles, menopause can wreak havoc on your complexion,
+                      leaving you feeling less than confident about your skin's
+                      appearance. But fear not - Shinora Skin and Dental Care
+                      Clinic is here to help you navigate through this
+                      challenging period with ease and grace.
+                    </p>
 
-                    <!-- Email -->
-                    <div class="contact-item mb-30 mb-sm-20">
-                      <div class="ci-icon">
-                        <i class="mi-email"></i>
-                      </div>
-                      <h4 class="ci-title visually-hidden">Our Email</h4>
-                      <div class="ci-text">appointment@shinora.in</div>
-                      <div>
-                        <a
-                          href="mailto:appointment@shinora.in"
-                          class="link-hover-anim"
-                          data-link-animate="y"
-                          >Say Hello <i class="mi-arrow-right size-18"></i
-                        ></a>
-                      </div>
-                    </div>
-                    <!-- End Email -->
+                    <p>
+                      Led by renowned dermatologist Dr. Bhavarth Kalaria,
+                      Shinora Clinic offers personalized skincare solutions
+                      tailored to address the unique needs of women going
+                      through menopause. With a focus on advanced treatments and
+                      holistic care, we strive to restore your skin's vitality
+                      and radiance, empowering you to embrace this new chapter
+                      of your life with confidence.
+                    </p>
 
-                    <!-- Phone -->
-                    <div class="contact-item">
-                      <div class="ci-icon">
-                        <i class="mi-mobile"></i>
-                      </div>
-                      <h4 class="ci-title visually-hidden">Call Us</h4>
-                      <div class="ci-text">
-                        +91 889 933 0033
-                        <div class="small">(Monday-Friday: 10am to 7pm)</div>
-                      </div>
-                      <div>
-                        <a
-                          href="tel:+918899330033 "
-                          class="link-hover-anim"
-                          data-link-animate="y"
-                          >Call now <i class="mi-arrow-right size-18"></i
-                        ></a>
-                      </div>
-                    </div>
-                    <!-- End Phone -->
+                    <h3>Understanding Menopausal Skin Challenges</h3>
+                    <p>
+                      Menopause brings about significant hormonal changes in a
+                      woman's body, leading to a decline in estrogen levels.
+                      This hormonal imbalance can trigger a myriad of skin
+                      issues, including:
+                    </p>
+
+                    <ul>
+                      <li>Dryness and dehydration</li>
+                      <li>Loss of elasticity and firmness</li>
+                      <li>Increased sensitivity and irritation</li>
+                      <li>Appearance of fine lines and wrinkles</li>
+                      <li>Uneven skin tone and hyperpigmentation</li>
+                    </ul>
+
+                    <h3>Our Approach to Menopausal Skin Care</h3>
+
+                    <p>
+                      At Shinora Clinic, we believe in addressing menopausal
+                      skin concerns from the inside out. Our comprehensive
+                      approach combines advanced medical treatments with
+                      personalized skincare routines and lifestyle modifications
+                      to optimize skin health and vitality.
+                    </p>
+                    <ul>
+                      <li>Customized Treatment Plans:</li>
+                      <p>
+                        Dr. Bhavarth Kalaria designs personalized treatment
+                        plans tailored to your specific skin concerns and goals.
+                        From anti-aging therapies to hydrating facials and
+                        rejuvenating laser treatments, we offer a wide range of
+                        options to address your unique needs.
+                      </p>
+                      <li>Advanced Technologies:</li>
+                      <p>
+                        Leveraging state-of-the-art technology and innovative
+                        techniques, we deliver superior results with minimal
+                        discomfort and downtime. Our clinic is equipped with
+                        cutting-edge devices such as laser therapy,
+                        microdermabrasion, and chemical peels to target stubborn
+                        skin issues and promote collagen production for a
+                        youthful complexion.
+                      </p>
+                      <li>Holistic Care:</li>
+                      <p>
+                        In addition to medical interventions, we emphasize the
+                        importance of holistic skincare practices and lifestyle
+                        modifications. Our team educates and empowers you to
+                        make informed choices about your skincare routine, diet,
+                        and overall wellness to support long-term skin health
+                        and vitality.
+                      </p>
+                    </ul>
+
+                    <h3>Experience the Shinora Difference</h3>
+                    <p>
+                      Located in the heart of Ahmedabad, Gujarat, Shinora Skin
+                      and Dental Care Clinic is your trusted partner in
+                      achieving radiant, youthful skin during menopause and
+                      beyond. With Dr. Bhavarth Kalaria's expertise and our
+                      dedicated team's commitment to excellence, we are
+                      dedicated to helping you look and feel your best at every
+                      stage of life.
+                    </p>
+                    <p>
+                      Take the first step towards rejuvenated skin and renewed
+                      confidence. Schedule your consultation at Shinora Clinic
+                      today and embark on a journey to glowing, radiant skin
+                      during menopause and beyond.
+                    </p>
+
+                    <h3>Contact Information</h3>
+                    <p><b>Shinora Skin and Dental Care Clinic</b></p>
+                    <p>
+                      402, Soham Pristine, behind Times Square Grand, off Sindhu
+                      Bhavan Marg, PRL Colony, Thaltej, Ahmedabad, Gujarat
+                      380054
+                    </p>
+                    <p>Phone: +91 889 933 0033</p>
+                    <p>Email: appointment@shinora.in</p>
+                    <p>Website: www.shinora.in</p>
                   </div>
                 </div>
-                <!-- End Contact Information -->
-              </div>
-              <!-- End Left Column -->
+                <!-- End Post -->
 
-              <!-- Right Column -->
-              <div class="col-lg-8 col-xl-7 offset-xl-1">
-                <div class="position-relative">
-                  <!-- Decorative Image -->
-                  <div class="decoration-11 d-none d-xl-block">
-                    <img
-                      src="images2/clinic.png"
-                      width="225"
-                      height="250"
-                      alt=""
-                    />
-                  </div>
-                  <!-- End Decorative Image -->
+                <!-- Add Comment -->
+                <div class="mb-80 mb-xs-40">
+                  <h4 class="blog-page-title">Leave a comment</h4>
 
-                  <div class="box-shadow round p-4 p-sm-5">
-                    <h4 class="h3 mb-30">Get your Exclusive Offer</h4>
-
-                    <!-- Contact Form -->
-                    <form class="form contact-form" id="contact_form">
-                      <div class="row">
-                        <div class="col-md-6">
-                          <!-- Name -->
-                          <div class="form-group">
-                            <label for="name">Name</label>
-                            <input
-                              type="text"
-                              name="name"
-                              id="name"
-                              class="input-lg round form-control"
-                              placeholder="Enter your name"
-                              pattern=".{3,100}"
-                              required
-                              aria-required="true"
-                            />
-                          </div>
-                          <!-- End Name -->
-                        </div>
-
-                        <div class="col-md-6">
-                          <!-- Email -->
-                          <div class="form-group">
-                            <label for="email">Email</label>
-                            <input
-                              type="email"
-                              name="email"
-                              id="email"
-                              class="input-lg round form-control"
-                              placeholder="Enter your email"
-                              pattern=".{5,100}"
-                              required
-                              aria-required="true"
-                            />
-                          </div>
-                          <!-- End Email -->
-                        </div>
+                  <!-- Form -->
+                  <form method="post" action="#" id="form" class="form">
+                    <div class="row mb-30 mb-md-20">
+                      <div class="col-md-6 mb-md-20">
+                        <!-- Name -->
+                        <label for="name">Name *</label>
+                        <input
+                          type="text"
+                          name="name"
+                          id="name"
+                          class="input-lg round form-control"
+                          placeholder="Enter your name"
+                          maxlength="100"
+                          required
+                          aria-required="true"
+                        />
                       </div>
 
                       <div class="col-md-6">
-                        <!-- Phone Number -->
-                        <div class="form-group">
-                          <label for="email">Phone Number</label>
-                          <input
-                            type="text"
-                            name="phone"
-                            id="phone"
-                            class="input-lg round form-control"
-                            placeholder="Enter your phone number"
-                            pattern=".{5,100}"
-                            required
-                            aria-required="true"
-                          />
-                        </div>
-                        <!-- End Email -->
-                      </div>
-
-                      <!-- Message -->
-                      <!-- <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea
-                          name="message"
-                          id="message"
+                        <!-- Email -->
+                        <label for="email">Email *</label>
+                        <input
+                          type="email"
+                          name="email"
+                          id="email"
                           class="input-lg round form-control"
-                          style="height: 130px"
-                          placeholder="Enter your message"
-                        ></textarea>
-                      </div> -->
-
-                      <div class="row">
-                        <div class="col-md-6 col-xl-5">
-                          <!-- Send Button -->
-                          <div class="pt-3">
-                            <button
-                              class="btn btn-mod btn-large btn-round btn-hover-anim"
-                              id="submit"
-                              aria-controls="result"
-                              style="background-color: #014e4e"
-                            >
-                              <span>Get Offer</span>
-                            </button>
-                          </div>
-                          <!-- End Send Button -->
-                        </div>
-
-                        <div
-                          class="col-md-6 col-xl-7 d-flex align-items-center"
-                        >
-                          <!-- Inform Tip -->
-                          <div class="form-tip w-100 pt-3 mt-sm-20">
-                            <i class="icon-info size-16"></i>
-                            All the fields are required. By sending the form you
-                            agree to the <a href="#">Terms & Conditions</a> and
-                            <a href="#">Privacy Policy</a>.
-                          </div>
-                          <!-- End Inform Tip -->
-                        </div>
+                          placeholder="Enter your email"
+                          maxlength="100"
+                          required
+                          aria-required="true"
+                        />
                       </div>
+                    </div>
 
-                      <div
-                        id="result"
-                        role="region"
-                        aria-live="polite"
-                        aria-atomic="true"
-                      ></div>
-                    </form>
-                    <!-- End Contact Form -->
-                  </div>
+                    <div class="mb-30 mb-md-20">
+                      <!-- Website -->
+                      <label for="website">Website</label>
+                      <input
+                        type="text"
+                        name="website"
+                        id="website"
+                        class="input-lg round form-control"
+                        placeholder="Enter your website"
+                        maxlength="100"
+                      />
+                    </div>
+
+                    <!-- Comment -->
+                    <div class="mb-30 mb-md-20">
+                      <label for="comment">Comment</label>
+                      <textarea
+                        name="comment"
+                        id="comment"
+                        class="input-lg round form-control"
+                        rows="6"
+                        placeholder="Enter your comment"
+                        maxlength="400"
+                      ></textarea>
+                    </div>
+
+                    <!-- Send Button -->
+                    <button
+                      type="submit"
+                      class="submit_btn btn btn-mod btn-large btn-round btn-hover-anim"
+                    >
+                      <span>Send Comment</span>
+                    </button>
+
+                    <!-- Inform Tip -->
+                    <div class="form-tip bg-gray-light-1 round mt-30 p-3">
+                      * - these fields are required. By sending the form you
+                      agree to the <a href="#">Terms & Conditions</a> and
+                      <a href="#">Privacy Policy</a>.
+                    </div>
+                  </form>
+                  <!-- End Form -->
                 </div>
+                <!-- End Add Comment -->
+
+                <!-- Prev/Next Post -->
+                <div class="clearfix mt-40">
+                  <a href="#" class="blog-item-more left"
+                    ><i class="mi-chevron-left"></i>&nbsp;Prev post</a
+                  >
+                  <a href="#" class="blog-item-more right"
+                    >Next post&nbsp;<i class="mi-chevron-right"></i
+                  ></a>
+                </div>
+                <!-- End Prev/Next Post -->
               </div>
-              <!-- End Right Column -->
+              <!-- End Content -->
             </div>
           </div>
         </section>
-        <!-- End Contact Section -->
+        <!-- End Section -->
 
         <!-- Divider -->
         <hr class="mt-0 mb-0" />
         <!-- End Divider -->
-
-        <!-- Google Map -->
-        <div class="google-map">
-          <a href="#" class="map-section">
-            <div class="map-toggle wow fadeInUpShort" aria-hidden="true">
-              <div class="mt-icon">
-                <i class="mi-location"></i>
-              </div>
-              <div class="mt-text">
-                <div class="mt-open">
-                  Open the map <i class="mt-open-icon"></i>
-                </div>
-                <div class="mt-close">
-                  Close the map <i class="mt-close-icon"></i>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14685.710091241592!2d72.498416!3d23.0447828!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bb0579cadd1%3A0x29a1e2b5a40c7568!2sShinora%20Skin%20%26%20Dental%20Clinic!5e0!3m2!1sen!2sin!4v1712757606104!5m2!1sen!2sin"
-            width="600"
-            height="450"
-            loading="lazy"
-            style="border: 0"
-            allowfullscreen=""
-            aria-hidden="false"
-            tabindex="0"
-          ></iframe>
-        </div>
-        <!-- End Google Map -->
       </main>
 
       <!-- Footer -->
-      <footer class="footer-1 bg-dark-1 light-content">
+      <footer class="footer-1 light-content" style="background-color: #014e4e">
         <div class="container">
           <div class="page-section">
             <div class="row">
@@ -779,30 +768,27 @@
     <script src="js/contact-form.js"></script>
     <script src="js/all.js"></script>
     <script>
-      const form = document.querySelector("#contact_form");
-      const submitButton = document.querySelector("#submit");
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbwsXy8n41d_0QQjad_dx7FIWfgkGDEsa3M3DDBXmY0dY5XAWkctvT6_NaXx0BPzX2ra/exec";
+      document.addEventListener("DOMContentLoaded", function () {
+        const navbar = document.querySelector(".inner-nav");
 
-      form.addEventListener("submit", (e) => {
-        submitButton.disabled = true;
-        e.preventDefault();
-        let requestBody = new FormData(form);
-        fetch(scriptURL, { method: "POST", body: requestBody })
-          .then((response) => {
-            alert(
-              "Thanks! You will receive your exclusive offer on email address provided.",
-              response
-            );
-            form.reset();
-            submitButton.disabled = false;
-          })
-          .catch((error) => {
-            alert("Error!", error.message);
-            submitButton.disabled = false;
-          });
+        function handleScroll() {
+          const scrollPosition = window.scrollY;
+          if (scrollPosition > 100) {
+            navbar.classList.add("nav-scrolled");
+          } else {
+            navbar.classList.remove("nav-scrolled");
+          }
+        }
+
+        // Check scroll position on load in case the page is reloaded with an existing scroll
+        handleScroll();
+
+        // Listen for scroll events
+        window.addEventListener("scroll", handleScroll);
       });
     </script>
     <!-- End JS -->
   </body>
+
+  <!-- Mirrored from resonance.bestlooker.pro/strong-blog-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 18 Mar 2024 06:19:44 GMT -->
 </html>
