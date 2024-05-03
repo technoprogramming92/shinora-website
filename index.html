@@ -39,12 +39,52 @@ You can find the code of your language here - https://www.w3schools.com/tags/ref
       }
       h1,
       h3 {
-        font-family: BlackMango;
+        font-family: Plus Jakarta Sans;
         font-size: 45px;
       }
 
       p {
         font-family: "Plus Jakarta Sans", sans-serif;
+      }
+    </style>
+    <style>
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      #home {
+        animation: fadeIn 3s ease-in-out;
+        background-size: cover;
+        background-position: center;
+        transition: background-image 3s ease-in-out;
+      }
+
+      .background-div {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-size: cover;
+        background-position: center;
+        transition: opacity 3s ease-in-out;
+      }
+
+      #bg1 {
+        opacity: 1;
+      }
+      #bg2 {
+        opacity: 0;
+      }
+    </style>
+    <style>
+      .nav-scrolled a {
+        color: #055d5b !important; /* Change this color to whatever you want for the scrolling state */
       }
     </style>
   </head>
@@ -88,19 +128,16 @@ You can find the code of your language here - https://www.w3schools.com/tags/ref
           <div class="inner-nav desktop-nav">
             <ul class="clearlist local-scroll">
               <li>
-                <a
-                  href="index.html"
-                  class="active"
-                  style="color: #028a8a"
+                <a href="index.html" class="active" style="color: #ddbc93"
                   >Home</a
                 >
               </li>
               <li>
-                <a href="about.html" style="color: #028a8a">About</a>
+                <a href="about.html" style="color: #ddbc93">About</a>
               </li>
               <!-- Item With Sub -->
               <li>
-                <a href="#" class="mn-has-sub" style="color: #028a8a"
+                <a href="#" class="mn-has-sub" style="color: #ddbc93"
                   >Skin Care <i class="mi-chevron-down"></i
                 ></a>
 
@@ -280,17 +317,17 @@ You can find the code of your language here - https://www.w3schools.com/tags/ref
                   </li>
                 </ul>
                 <!-- End Sub Megamenu -->
-                </li>
-                <!-- End Item With Sub -->
+              </li>
+              <!-- End Item With Sub -->
 
-                <!-- Item With Sub -->
-                <!-- <li>
+              <!-- Item With Sub -->
+              <!-- <li>
                 <a href="#" class="mn-has-sub" style="color: #014e4e"
                   >Dental Care <i class="mi-chevron-down"></i
                 ></a> -->
 
-                <!-- Sub Megamenu -->
-                <!-- <ul class="mn-sub mn-has-multi">
+              <!-- Sub Megamenu -->
+              <!-- <ul class="mn-sub mn-has-multi">
                   <li class="mn-sub-multi">
                     <ul>
                       <li>
@@ -376,16 +413,16 @@ You can find the code of your language here - https://www.w3schools.com/tags/ref
                     </ul>
                   </li>
                 </ul> -->
-                <!-- End Sub Megamenu -->
-                <!-- </li> -->
-                <!-- End Item With Sub -->
-              </li>
+              <!-- End Sub Megamenu -->
+              <!-- </li> -->
+              <!-- End Item With Sub -->
+              <!-- </li> -->
 
               <li>
-                <a href="strong-blog.html" style="color: #028a8a">Blog</a>
+                <a href="strong-blog.html" style="color: #ddbc93">Blog</a>
               </li>
               <li>
-                <a href="contact-us.html" style="color: #028a8a"
+                <a href="contact-us.html" style="color: #ddbc93"
                   >Exclusive Offer</a
                 >
               </li>
@@ -417,9 +454,18 @@ You can find the code of your language here - https://www.w3schools.com/tags/ref
         <!-- Home Section -->
         <section
           class="home-section bg-dark-alpha-30 light-content parallax-5"
-          style="background-image: url(images2/bg-4.jpeg)"
           id="home"
         >
+          <div
+            id="bg1"
+            class="background-div"
+            style="background-image: url(images2/home-bg/001.jpg)"
+          ></div>
+          <div
+            id="bg2"
+            class="background-div"
+            style="background-image: url(images2/home-bg/001.jpg)"
+          ></div>
           <div
             class="container min-height-100vh d-flex align-items-center pt-100 pb-100 pt-sm-120 pb-sm-120"
           >
@@ -1398,7 +1444,7 @@ You can find the code of your language here - https://www.w3schools.com/tags/ref
           >
             <div
               class="marquee-track marquee-animation-3"
-              style="font-family: BlackMango"
+              style="font-family: Plus Jakarta Sans"
             >
               <h2 class="visually-hidden">
                 Why Choose Shinora Skin and Dental Clinic?
@@ -1557,7 +1603,7 @@ You can find the code of your language here - https://www.w3schools.com/tags/ref
               >
                 <h2
                   class="section-title-strong mb-40"
-                  style="font-family: BlackMango"
+                  style="font-family: Plus Jakarta Sans"
                 >
                   Patients <span class="font-alt">Stories</span>
                 </h2>
@@ -2236,6 +2282,60 @@ You can find the code of your language here - https://www.w3schools.com/tags/ref
     <script src="js/contact-form.js"></script>
     <script src="js/all.js"></script>
     <script src="js/before-after.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const images = [
+          "images2/home-bg/001.jpg",
+          "images2/home-bg/002.jpg",
+          "images2/home-bg/003.jpg",
+          "images2/home-bg/004.jpg",
+          "images2/home-bg/005.jpg",
+          "images2/home-bg/006.jpg",
+          "images2/home-bg/007.jpg",
+          "images2/home-bg/008.jpg",
+          "images2/home-bg/009.jpg",
+          "images2/home-bg/010.jpg",
+          "images2/home-bg/011.jpg",
+        ];
+        let currentIndex = 1; // start from the second image since the first is already set
+        let activeBg = 1;
+
+        function changeBackground() {
+          const nextBg =
+            activeBg === 1
+              ? document.getElementById("bg2")
+              : document.getElementById("bg1");
+          const currentBg =
+            activeBg === 1
+              ? document.getElementById("bg1")
+              : document.getElementById("bg2");
+
+          nextBg.style.backgroundImage = `url(${images[currentIndex]})`;
+          nextBg.style.opacity = 1;
+          currentBg.style.opacity = 0;
+
+          activeBg = activeBg === 1 ? 2 : 1;
+          currentIndex = (currentIndex + 1) % images.length;
+        }
+
+        setInterval(changeBackground, 4000);
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navbar = document.querySelector(".inner-nav");
+        console.log("Script loaded and navbar found:", navbar); // Debugging line
+
+        window.onscroll = function () {
+          console.log("Current Scroll Y:", window.scrollY); // Debugging line
+          if (window.scrollY > 100) {
+            navbar.classList.add("nav-scrolled");
+          } else {
+            navbar.classList.remove("nav-scrolled");
+          }
+        };
+      });
+    </script>
 
     <!-- End JS -->
   </body>
