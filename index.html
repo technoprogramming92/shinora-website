@@ -72,7 +72,9 @@ You can find the code of your language here - https://www.w3schools.com/tags/ref
         left: 0;
         background-size: cover;
         background-position: center;
+        opacity: 0.5; /* Adjust this value as needed to ensure text readability */
         transition: opacity 3s ease-in-out;
+        filter: brightness(20%);
       }
 
       #bg1 {
@@ -461,11 +463,7 @@ You can find the code of your language here - https://www.w3schools.com/tags/ref
             class="background-div"
             style="background-image: url(images2/home-bg/001.jpg)"
           ></div>
-          <div
-            id="bg2"
-            class="background-div"
-            style="background-image: url(images2/home-bg/001.jpg)"
-          ></div>
+          <div id="bg2" class="background-div"></div>
           <div
             class="container min-height-100vh d-flex align-items-center pt-100 pb-100 pt-sm-120 pb-sm-120"
           >
@@ -2294,8 +2292,8 @@ You can find the code of your language here - https://www.w3schools.com/tags/ref
           "images2/home-bg/007.jpg",
           "images2/home-bg/008.jpg",
           "images2/home-bg/009.jpg",
-          "images2/home-bg/010.jpg",
-          "images2/home-bg/011.jpg",
+          "images2/home-bg/0010.jpg",
+          "images2/home-bg/0011.jpg",
         ];
         let currentIndex = 1; // start from the second image since the first is already set
         let activeBg = 1;
@@ -2324,16 +2322,21 @@ You can find the code of your language here - https://www.w3schools.com/tags/ref
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const navbar = document.querySelector(".inner-nav");
-        console.log("Script loaded and navbar found:", navbar); // Debugging line
 
-        window.onscroll = function () {
-          console.log("Current Scroll Y:", window.scrollY); // Debugging line
-          if (window.scrollY > 100) {
+        function handleScroll() {
+          const scrollPosition = window.scrollY;
+          if (scrollPosition > 100) {
             navbar.classList.add("nav-scrolled");
           } else {
             navbar.classList.remove("nav-scrolled");
           }
-        };
+        }
+
+        // Check scroll position on load in case the page is reloaded with an existing scroll
+        handleScroll();
+
+        // Listen for scroll events
+        window.addEventListener("scroll", handleScroll);
       });
     </script>
 
