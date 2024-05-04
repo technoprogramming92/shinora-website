@@ -1,8 +1,6 @@
 .images-container {
-  position: relative;
-  width: 630px; /* Set to your desired width */
-  height: 400px; /* Set to your desired height, maintaining aspect ratio */
-  overflow: hidden;
+  padding: 0 20px; /* Add padding to prevent accidental swipes */
+  margin: 0 -20px;
 }
 
 .before-image,
@@ -21,9 +19,10 @@
 .slider-line {
   position: absolute;
   height: 100%;
-  width: 2px;
+  width: 10px;
   background-color: #ffffff;
   cursor: ew-resize;
   left: 50%;
   top: 0;
+  transform: translateX(-50%);
 }

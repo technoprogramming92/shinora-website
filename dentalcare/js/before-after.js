@@ -1,33 +1,50 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Select all the containers
   let containers = document.querySelectorAll(".images-container");
-
   containers.forEach(function (container) {
     let slider = container.querySelector(".slider-line");
     let afterImage = container.querySelector(".after-image");
+    let isSliding = false;
 
-    // Function to update the slider and image clipping
     function updateSlider(e) {
+      e.preventDefault(); // Prevent default action to avoid scrolling and carousel swipe
       let rect = container.getBoundingClientRect();
-      let x; // X position within the container
-      // Check if the event is a touch event
+      let x = e.clientX - rect.left;
       if (e.touches) {
         x = e.touches[0].clientX - rect.left;
-      } else {
-        x = e.clientX - rect.left;
       }
 
       let width = container.offsetWidth;
-      if (x < 0) x = 0;
-      if (x > width) x = width;
+      x = Math.max(0, Math.min(x, width));
       slider.style.left = x + "px";
       afterImage.style.clip = "rect(0, " + x + "px, auto, auto)";
     }
 
-    // Handle mouse move events
-    container.addEventListener("mousemove", updateSlider);
+    container.addEventListener("mousedown", function () {
+      isSliding = true;
+    });
+    container.addEventListener("touchstart", function () {
+      isSliding = true;
+    });
+    container.addEventListener("mouseup", function () {
+      isSliding = false;
+    });
+    container.addEventListener("touchend", function () {
+      isSliding = false;
+    });
 
-    // Handle touch move events
-    container.addEventListener("touchmove", updateSlider, { passive: false });
+    container.addEventListener("mousemove", function (e) {
+      if (isSliding) {
+        updateSlider(e);
+      }
+    });
+    container.addEventListener(
+      "touchmove",
+      function (e) {
+        if (isSliding) {
+          updateSlider(e);
+        }
+      },
+      { passive: false }
+    );
   });
 });
