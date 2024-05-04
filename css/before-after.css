@@ -1,7 +1,9 @@
-.images-container {
+.container1 {
   position: relative;
-  width: 630px; /* Set to your desired width */
-  height: 400px; /* Set to your desired height, maintaining aspect ratio */
+  width: 100%; /* Make it responsive */
+  max-width: 900px; /* Maximum width */
+  height: auto; /* Height auto for maintaining aspect ratio */
+  aspect-ratio: 900 / 570; /* Maintaining aspect ratio based on your dimensions */
   overflow: hidden;
 }
 
@@ -15,15 +17,44 @@
 }
 
 .after-image {
-  clip: rect(0, 0, auto, auto);
+  clip-path: inset(0 50% 0 0); /* Initially hiding half of the 'after' image */
 }
 
-.slider-line {
+.slider {
   position: absolute;
+  width: 2px; /* width of the slider */
   height: 100%;
-  width: 2px;
-  background-color: #ffffff;
-  cursor: ew-resize;
-  left: 50%;
-  top: 0;
+  background-color: #ffffff; /* Color of the slider */
+  left: 50%; /* Initial position of the slider */
+  pointer-events: none; /* The slider doesn't capture mouse events */
+  z-index: 2; /* Ensure it's above other images */
+}
+
+/* Adding a drag handle indicator */
+.slider::before {
+  content: "⇆"; /* You can also use an image or another symbol */
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -10px; /* Adjust based on actual size of the content */
+  transform: translate(-50%, -50%);
+  font-size: 18px; /* Adjust size */
+  color: #ffffff; /* Adjust color to make it visible against the background */
+  pointer-events: auto; /* Enables interaction with the slider handle */
+  z-index: 3;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 600px) {
+  .container1 {
+    max-width: 100%; /* Use 100% of the screen width */
+    aspect-ratio: 16 / 9; /* Change aspect ratio for smaller screens if needed */
+  }
+  .slider {
+    width: 4px; /* Thicker for touch devices */
+  }
+  .slider::before {
+    left: -15px; /* Adjust based on the thicker slider */
+    font-size: 24px; /* Larger for better visibility */
+  }
 }

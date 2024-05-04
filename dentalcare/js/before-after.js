@@ -1,50 +1,57 @@
-document.addEventListener("DOMContentLoaded", function () {
-  let containers = document.querySelectorAll(".images-container");
-  containers.forEach(function (container) {
-    let slider = container.querySelector(".slider-line");
-    let afterImage = container.querySelector(".after-image");
-    let isSliding = false;
+function initComparisons() {
+  var x = document.getElementsByClassName("img-comp-overlay");
+  for (let i = 0; i < x.length; i++) {
+    compareImages(x[i]);
+  }
+}
 
-    function updateSlider(e) {
-      e.preventDefault(); // Prevent default action to avoid scrolling and carousel swipe
-      let rect = container.getBoundingClientRect();
-      let x = e.clientX - rect.left;
-      if (e.touches) {
-        x = e.touches[0].clientX - rect.left;
-      }
+function compareImages(img) {
+  var slider,
+    clicked = 0,
+    w = img.offsetWidth;
+  img.style.width = w / 2 + "px";
 
-      let width = container.offsetWidth;
-      x = Math.max(0, Math.min(x, width));
-      slider.style.left = x + "px";
-      afterImage.style.clip = "rect(0, " + x + "px, auto, auto)";
-    }
+  // Create slider
+  slider = document.createElement("DIV");
+  slider.setAttribute("class", "img-comp-slider");
+  img.parentElement.insertBefore(slider, img);
 
-    container.addEventListener("mousedown", function () {
-      isSliding = true;
-    });
-    container.addEventListener("touchstart", function () {
-      isSliding = true;
-    });
-    container.addEventListener("mouseup", function () {
-      isSliding = false;
-    });
-    container.addEventListener("touchend", function () {
-      isSliding = false;
-    });
+  // Position slider in the middle
+  slider.style.top = img.offsetHeight / 2 - slider.offsetHeight / 2 + "px";
+  slider.style.left = img.offsetWidth - slider.offsetWidth / 2 + "px";
 
-    container.addEventListener("mousemove", function (e) {
-      if (isSliding) {
-        updateSlider(e);
-      }
+  slider.addEventListener("mousedown", function (e) {
+    clicked = 1;
+    window.addEventListener("mousemove", slideMove);
+    window.addEventListener("mouseup", function () {
+      clicked = 0;
     });
-    container.addEventListener(
-      "touchmove",
-      function (e) {
-        if (isSliding) {
-          updateSlider(e);
-        }
-      },
-      { passive: false }
-    );
   });
-});
+
+  slider.addEventListener("touchstart", function (e) {
+    clicked = 1;
+    window.addEventListener("touchmove", slideMove);
+    window.addEventListener("touchend", function () {
+      clicked = 0;
+    });
+  });
+
+  function slideMove(e) {
+    var pos;
+    if (clicked === 0) return false;
+    pos = getCursorPos(e, img);
+    if (pos < 0) pos = 0;
+    if (pos > w) pos = w;
+    img.style.width = pos + "px";
+    slider.style.left = pos - slider.offsetWidth / 2 + "px";
+  }
+
+  function getCursorPos(e, img) {
+    var a = img.getBoundingClientRect(),
+      x = e.pageX - a.left - window.pageXOffset;
+    return x;
+  }
+}
+
+// Initialize the function
+window.onload = initComparisons;

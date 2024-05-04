@@ -1,19 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Select all the containers
-  let containers = document.querySelectorAll(".images-container");
+  // Select all slider containers
+  const containers = document.querySelectorAll(".container1");
 
-  containers.forEach(function (container) {
-    let slider = container.querySelector(".slider-line");
+  containers.forEach((container) => {
+    let slider = container.querySelector(".slider");
     let afterImage = container.querySelector(".after-image");
 
-    container.addEventListener("mousemove", function (e) {
+    // Update to handle mouse and touch events for each container
+    function updateView(x) {
       let rect = container.getBoundingClientRect();
-      let x = e.clientX - rect.left; // Get the horizontal coordinate within the container
-      let width = container.offsetWidth;
+      let width = rect.width;
       if (x < 0) x = 0;
       if (x > width) x = width;
       slider.style.left = x + "px";
-      afterImage.style.clip = "rect(0, " + x + "px, auto, auto)";
+      afterImage.style.clipPath = `inset(0 ${width - x}px 0 0)`;
+    }
+
+    container.addEventListener("mousemove", (e) => {
+      updateView(e.clientX - container.getBoundingClientRect().left);
+    });
+
+    container.addEventListener("touchmove", (e) => {
+      e.preventDefault();
+      let touch = e.touches[0];
+      updateView(touch.clientX - container.getBoundingClientRect().left);
     });
   });
 });
