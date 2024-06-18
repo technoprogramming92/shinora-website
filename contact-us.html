@@ -392,7 +392,6 @@
         </div>
       </nav>
       <!-- End Navigation Panel -->
-
       <main id="main">
         <!-- Home Section -->
         <section
@@ -409,9 +408,9 @@
               <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
                 <h1 class="hs-title-10 mb-10">
                   <span class="wow charsAnimIn" data-splitting="chars">
-                    Exclusive
+                    Ask
                     <span class="mark-decoration-3-wrap"
-                      >Offer<b
+                      >Us<b
                         class="mark-decoration-3 wow scalexIn"
                         data-wow-delay="0.5s"
                       ></b
@@ -420,8 +419,8 @@
                 </h1>
 
                 <p class="section-descr mb-0 wow fadeIn" data-wow-delay="0.2s">
-                  Please fill following form to receive our exclusive
-                  inaugration offer.
+                  Please fill following form to ask us any question about your
+                  problem we will contact you soon.
                 </p>
               </div>
             </div>
@@ -529,7 +528,7 @@
                   <!-- End Decorative Image -->
 
                   <div class="box-shadow round p-4 p-sm-5">
-                    <h4 class="h3 mb-30">Get your Exclusive Offer</h4>
+                    <h4 class="h3 mb-30">Ask us about your problem</h4>
 
                     <!-- Contact Form -->
                     <form class="form contact-form" id="contact_form">
@@ -590,16 +589,16 @@
                       </div>
 
                       <!-- Message -->
-                      <!-- <div class="form-group">
+                      <div class="form-group">
                         <label for="message">Message</label>
                         <textarea
                           name="message"
                           id="message"
                           class="input-lg round form-control"
-                          style="height: 130px"
+                          style="height: 120px"
                           placeholder="Enter your message"
                         ></textarea>
-                      </div> -->
+                      </div>
 
                       <div class="row">
                         <div class="col-md-6 col-xl-5">
@@ -611,7 +610,7 @@
                               aria-controls="result"
                               style="background-color: #014e4e"
                             >
-                              <span>Get Offer</span>
+                              <span>Submit</span>
                             </button>
                           </div>
                           <!-- End Send Button -->
@@ -790,10 +789,7 @@
         let requestBody = new FormData(form);
         fetch(scriptURL, { method: "POST", body: requestBody })
           .then((response) => {
-            alert(
-              "Thanks! You will receive your exclusive offer on email address provided.",
-              response
-            );
+            alert("Thanks! Our team will contact you soon.", response);
             form.reset();
             submitButton.disabled = false;
           })
