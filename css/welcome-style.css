@@ -1,0 +1,320 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+html {
+  font-family: "Montserrat", Arial, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: #055d5f;
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+input,
+select,
+textarea {
+  color: #e7e4e4;
+  font: inherit;
+  margin: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+textarea {
+  overflow: auto;
+}
+
+#container {
+  border: solid 3px #f3f0ef;
+  max-width: 768px;
+  margin: 60px auto;
+  position: relative;
+  padding: 37.5px;
+  box-sizing: border-box;
+}
+
+
+#sub-container{
+  margin-top: 33px;
+  display: flex;
+  justify-content: center; /* Centers items horizontally */
+  align-items: center; /* Centers items vertically */
+  width: 100%; /* Ensure the container has a defined width */
+  /* height: 100vh; Optional: set height if you want to center vertically within the viewport */
+}
+
+#sub-container svg{
+  color:#f3f0ef;
+}
+.address{
+  color: #fff;
+  display: flex;
+  margin-top: 40px;
+  justify-content: center; /* Centers items horizontally */
+  align-items: center; /* Centers items vertically */
+  width: 100%; 
+  
+   
+}
+
+#gm{
+  display: flex;
+  justify-content: center; /* Centers items horizontally */
+  align-items: center; /* Centers items vertically */
+  width: 100%; /* Ensure the container has a defined width */
+  /* height: 100vh; Optional: set height if you want to center vertically within the viewport */
+}
+
+a{
+  text-decoration: none;
+  transition: transform 0.5s;
+}
+
+a:hover{
+  transform: translateY(-5px);
+}
+
+
+
+.itemlogo{
+  display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.5s;
+            /* height: 100vh; */
+            /* display: grid;
+            place-items: center;
+            height: 100vh; */
+            
+}
+
+.itemlogo svg{
+  /* margin-bottom: 20px; */
+  margin-left:15px ;
+}
+.itemlogo span{
+  font-size: 9px;
+  color: #f3f0ef;
+  
+}
+
+.itemlogo:hover{
+  cursor: pointer;
+  transform: translateY(-5px);
+}
+#sub-container svg{
+margin-right: 15px;
+}
+form {
+  margin: 0;
+}
+
+h1 {
+  color: #f3f0ef;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 7px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.underline {
+  border-bottom: solid 2px #f3f0ef;
+  margin: -0.512em auto 1.5em auto;
+  width: 80px;
+}
+
+.icon_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+}
+
+.responsive_logo {
+  max-width: 100%;
+  height: auto;
+}
+
+.form_group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form_group .form_field {
+  width: 48%;
+  margin-bottom: 1.875em;
+}
+
+.form_group .form_field_full {
+  width: 100%;
+  margin-bottom: 1.875em;
+}
+
+label {
+  display: block;
+  font-size: 0.875em;
+  margin-bottom: 0.5em;
+  color: #f3f0ef;
+  text-transform: uppercase;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+  background: none;
+  border: none;
+  border-bottom: solid 2px #f3f0ef;
+  color: #f3f0ef;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: 0 0 0.875em 0;
+  text-transform: uppercase;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  padding: 0 0 0.875em 0;
+}
+
+select {
+  background: none;
+  border: none;
+  border-bottom: solid 2px #f3f0ef;
+  color: #f3f0ef;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 400;
+  height: auto;
+  line-height: 1.5em;
+  margin: 0;
+  outline: none;
+  padding: 0.875em 1em;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-sizing: border-box;
+}
+
+select option {
+  background: #055d5f;
+  color: #f3f0ef;
+  padding: 10px;
+}
+
+textarea {
+  line-height: 150%;
+  height: 150px;
+  resize: none;
+  width: 100%;
+}
+
+::-webkit-input-placeholder {
+  color: #f3f0ef;
+}
+
+:-moz-placeholder {
+  color: #f3f0ef;
+  opacity: 1;
+}
+
+::-moz-placeholder {
+  color: #f3f0ef;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #f3f0ef;
+}
+
+#form_button {
+  background: none;
+  border: solid 2px #f3f0ef;
+  color: #f3f0ef;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Helvetica", Arial, sans-serif;
+  font-size: 0.875em;
+  font-weight: bold;
+  outline: none;
+  padding: 20px 35px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  width: 100%;
+  margin-top: 1.875em;
+}
+
+#form_button:hover {
+  background: #474544;
+  color: #f2f3eb;
+}
+
+@media screen and (max-width: 768px) {
+  .form_group .form_field {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 26px;
+  }
+
+  .underline {
+    width: 68px;
+  }
+
+  #form_button {
+    padding: 15px 25px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  h1 {
+    font-size: 18px;
+  }
+
+  .icon {
+    height: 35px;
+    width: 35px;
+  }
+
+  .underline {
+    width: 53px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  select,
+  textarea {
+    font-size: 0.875em;
+  }
+}
