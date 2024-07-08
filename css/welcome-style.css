@@ -280,6 +280,11 @@ textarea {
   .form_group .form_field {
     width: 100%;
   }
+
+  #chl{
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
 }
 
 @media screen and (max-width: 480px) {
