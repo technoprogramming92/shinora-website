@@ -528,22 +528,11 @@ You can find the code of your language here - https://www.w3schools.com/tags/ref
                   </a>
                 </div>
                 <div class="d-inline-block me-3">
-                  <a href="#">
+                  <a href="#" id="blog-author">
                     <i class="mi-user size-16"></i>
                     <span class="visually-hidden">Author:</span>
-                    Dr. Bhavarth Kalaria
-                    <!-- Static content can be modified if needed -->
+                    <!-- Author name will be populated here -->
                   </a>
-                </div>
-                <div class="d-inline-block me-3">
-                  <i class="mi-folder size-16"></i>
-                  <span class="visually-hidden">Categories:</span>
-                  <a href="#">Skin Care</a>, <a href="#">Dermatology</a>
-                  <!-- Static content -->
-                </div>
-                <div class="d-inline-block me-3">
-                  <a href="#"><i class="mi-message size-16"></i> 0 Comments</a>
-                  <!-- Static content -->
                 </div>
               </div>
               <!-- End Author, Categories, Comments -->
@@ -696,16 +685,18 @@ You can find the code of your language here - https://www.w3schools.com/tags/ref
               const blog = response.items[0].fields;
 
               // Populate the blog detail page with the blog data
-              document.querySelector(".section-title-medium span").textContent =
-                blog.title;
-              document.querySelector(".blog-item-data .me-3 a").textContent =
-                new Date(blog.publishedDate).toLocaleDateString();
-              document.querySelector(".blog-item img").src =
+              document.getElementById("blog-title").textContent = blog.title;
+              document.getElementById("blog-date").textContent = new Date(
+                blog.publishedDate
+              ).toLocaleDateString();
+              document.getElementById("blog-author").textContent = blog.author;
+              document.getElementById("blog-image").src =
                 blog.image.fields.file.url;
-              document.querySelector(".blog-item img").alt = blog.title;
-              document.querySelector(".blog-item-body").innerHTML = `
-        ${documentToHtmlString(blog.content)}
-      `;
+              document.getElementById("blog-image").alt = blog.title;
+
+              // Convert rich text content to HTML and populate it
+              document.getElementById("blog-content").innerHTML =
+                documentToHtmlString(blog.content);
             } else {
               document.getElementById("main").innerHTML =
                 "<p>Blog not found.</p>";
